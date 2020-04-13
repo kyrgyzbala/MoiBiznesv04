@@ -1,0 +1,2 @@
+rootProject.name='MoiBiznesv04'
+include ':app'

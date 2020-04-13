@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:background="#1d2733">
+
+
+    <EditText
+        android:id="@+id/editTextItemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:textColor="#fff"
+        android:textColorHint="#E1EFEAEA"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/rounded_corners"
+        android:popupBackground="#302E2E"
+        android:prompt="@string/choose"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPlus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextItemName" />
+
+    <EditText
+        android:id="@+id/editTextQuantity"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="@string/_1"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textColorHint="#E1EFEAEA"
+        android:textSize="19sp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/textViewPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/plus"
+        android:textColor="#fff"
+        app:layout_constraintStart_toEndOf="@+id/editTextQuantity"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/textViewPlusSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/plus"
+        android:textColor="#fff"
+        app:layout_constraintStart_toEndOf="@+id/textViewItemSize"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+
+    <TextView
+        android:id="@+id/textViewMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:text="@string/minus"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/editTextQuantity"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPlus" />
+
+    <TextView
+        android:id="@+id/textViewMinusSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:text="@string/minus"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textViewItemSize"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPlusSize" />
+
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/costrus"
+        android:inputType="number"
+        android:textColor="#fff"
+        android:textColorHint="#E1EFEAEA"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQuantity" />
+
+    <TextView
+        android:id="@+id/textViewSom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/somtxt"
+        android:textColor="#fff"
+        app:layout_constraintStart_toEndOf="@+id/editTextPrice"
+        app:layout_constraintTop_toBottomOf="@+id/editTextQuantity" />
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/total"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTotalCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/_999"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#C01BEC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textViewSom2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/somtxt"
+        android:textColor="#C01BEC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewTotalCost" />
+
+    <Button
+        android:id="@+id/buttonShowTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/rounded_corners"
+        android:padding="16dp"
+        android:text="@string/total"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/buttonChooseColor"
+        android:layout_width="66dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/rounded_corners"
+        android:padding="0dp"
+        android:text="@string/colorrus"
+        android:textColor="#fff"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextItemName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/quantityrus"
+        android:textColor="#fff"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Button
+        android:id="@+id/buttonSell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/rounded_corners"
+        android:padding="16dp"
+        android:text="@string/sellrus"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonShowTotal" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/sizerustxt"
+        android:textColor="#fff"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+
+    <TextView
+        android:id="@+id/textViewItemSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="M"
+        android:textColor="#fff"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_vesna"
+        android:title="@string/vesna"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_leto"
+        android:title="@string/leto"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_osen"
+        android:title="@string/osen"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_shkolnyi"
+        android:title="@string/shkolnyi"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_zima"
+        android:title="@string/zima"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_drugie"
+        android:title="@string/drugie"
+        app:showAsAction="never" />
+
+</menu>

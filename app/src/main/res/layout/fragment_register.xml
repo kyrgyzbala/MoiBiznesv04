@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:padding="16dp"
+    tools:context=".sign_in.RegisterFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgLogoRegister"
+        android:layout_width="100dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/editTextEmailRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgLogoRegister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_action_user"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="#fff"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/editTextPasswordRegisterFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextEmailRegister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_action_password"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textWebPassword"
+        android:textColor="#fff"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/editTextPasswordRegisterSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPasswordRegisterFirst"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_action_password"
+        android:ems="10"
+        android:hint="@string/passwordagain"
+        android:inputType="textWebPassword"
+        android:textColor="#fff"
+        android:textSize="21sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewRegister"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/editTextPasswordRegisterSecond"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:cardBackgroundColor="#BA4AF1"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewVoitiSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/register"
+                android:textSize="23sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textViewAlreadyHave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardViewRegister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/alreadyHaveText"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/loginWith"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewAlreadyHave"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/loginwith"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#fff" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginWith"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/signInWithGoogle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/googlelogo" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/signInWithFacebook"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/signInWithGoogle"
+            android:src="@drawable/facebooklogo" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgLogoRegister"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

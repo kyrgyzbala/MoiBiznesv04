@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:padding="32dp"
+    tools:context=".sign_in.SignInFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:src="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/editTextEmailSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_action_user"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="#fff"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/editTextPasswordSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextEmailSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_action_password"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textWebPassword"
+        android:textColor="#fff"
+        android:textSize="21sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/editTextPasswordSignIn"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:cardBackgroundColor="#BA4AF1"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewVoitiSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/voiti"
+                android:textSize="23sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textViewRegisterHere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardViewSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/registerheretext"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgLogo"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

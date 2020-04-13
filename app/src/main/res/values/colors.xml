@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2E2D30</color>
+    <color name="colorPrimaryDark">#2E2D30</color>
+    <color name="colorAccent">#2BFA24</color>
+
+    <color name="defItemColor">#EBF647</color>
+    <color name="colorBackNav">#1d2733</color>
+    <color name="colorBackToolbar">#222e3c</color>
+    <color name="backgroundColr">#293951</color>
+</resources>

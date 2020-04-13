@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorBackToolbar</item>
+        <item name="colorPrimaryDark">@color/backgroundColr</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">#fff</item>
+        <item name="backgroundColor">#293951</item>
+        <item name="android:statusBarColor">#1a222d</item>
+    </style>
+
+    <style name="AppTheme.NoActionBarEdit">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">#E043E4</item>
+        <item name="backgroundColor">#293951</item>
+        <item name="android:statusBarColor">#1a222d</item>
+    </style>
+
+    <style name="AppTheme.NoActionBarLogin">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="backgroundColor">#293951</item>
+        <item name="android:statusBarColor">#774cd8</item>
+    </style>
+
+    <style name="TextColorWhite">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:colorAccent">#f3f3f3</item>
+        <item name="android:background">#293951</item>
+        <item name="android:textColor">#BB2DE3</item>
+        <item name="android:textColorPrimary">#f3f3f3</item>
+    </style>
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_vse_tovary"
+            android:icon="@drawable/ic_product"
+            android:title="@string/vsetovary_txt" />
+        <item
+            android:id="@+id/nav_statistics"
+            android:icon="@drawable/ic_product"
+            android:title="@string/statistika_txt" />
+    </group>
+
+    <item android:title="@string/catrus">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_vesna"
+                    android:icon="@drawable/ic_product"
+                    android:title="@string/vesna" />
+                <item
+                    android:id="@+id/nav_leto"
+                    android:icon="@drawable/ic_product"
+                    android:title="@string/leto" />
+                <item
+                    android:id="@+id/nav_osen"
+                    android:icon="@drawable/ic_product"
+                    android:title="@string/osen" />
+                <item
+                    android:id="@+id/nav_shkolnyi"
+                    android:icon="@drawable/ic_product"
+                    android:title="@string/shkolnyi" />
+                <item
+                    android:id="@+id/nav_zima"
+                    android:icon="@drawable/ic_product"
+                    android:title="@string/zima" />
+                <item
+                    android:id="@+id/nav_drugie"
+                    android:icon="@drawable/ic_product"
+                    android:title="@string/drugie" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/instrument">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_sample"
+                    android:title="Sample" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_sign_out"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/signout" />
+
+</menu>

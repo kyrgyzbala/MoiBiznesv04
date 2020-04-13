@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Мой Бизнес2</string>
+
+
+    <string name="facebook_app_id">893746214432344</string>
+    <string name="fb_login_protocol_scheme">fb893746214432344</string>
+
+
+    <string name="close_nav">"Close navigation Draw"</string>
+    <string name="open_nav">"Open navigation Draw"</string>
+    <string name="vsetovary_txt">Все товары</string>
+    <string name="statistika_txt">Статистика</string>
+    <string name="title_activity_all_sold_av">AllSoldAvActivity</string>
+    <string name="soldrus_txt">Продано</string>
+
+    <string name="updaterus">Обновление</string>
+    <string name="catrus">Категория</string>
+    <string name="total">Стоимость</string>
+    <string name="_999">999</string>
+    <string name="somtxt">сом</string>
+    <string name="costrus">Цена:</string>
+    <string name="quantityrus">Количество:</string>
+    <string name="namerus">Название</string>
+    <string name="save">save</string>
+    <string name="delete_rus">Удалить всё</string>
+    <string name="sizerustxt">Размер</string>
+    <string name="sellrus">Продать</string>
+    <string name="colorrus">Цвет</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="_1">1</string>
+    <string name="choose">Выберите</string>
+    <string name="name">Название</string>
+    <string name="instrument">Иструменты</string>
+
+    <!-- Categories -->
+    <string name="vesna">Весенние</string>
+    <string name="leto">Летние</string>
+    <string name="osen">Осенние</string>
+    <string name="shkolnyi">Школьные</string>
+    <string name="zima">Зимние</string>
+    <string name="drugie">Другие</string>
+
+    <!-- Sorting -->
+    <string name="sortrus">Сортировать</string>
+    <string name="newontoprus">Новые в начале</string>
+    <string name="oldontoprus">Старые в начале</string>
+
+    <!-- Login Screens -->
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="voiti">Войти</string>
+    <string name="registerheretext">Eщё не зарегистрированы?\n Регистрируйтесь здесь</string>
+    <string name="register">Регистрация</string>
+    <string name="alreadyHaveText">Уже зарегистрированы?\n Войти здесь</string>
+    <string name="passwordagain">Введите пароль еще раз</string>
+    <string name="loginwith">Войти через:</string>
+
+    <!-- Messages -->
+    <string name="emailMustContain">Вводите правильный Email</string>
+    <string name="passwordsMustMatch">Пороли не совпадают</string>
+    <string name="passwordLength">Пароль должен состоится минимум 6 символов</string>
+    <string name="signout">Выйти</string>
+    <string name="signout_message">Вы уверены что хотите выйти?</string>
+    <string name="signInFail">Неверный Email или пароль!</string>
+
+</resources>

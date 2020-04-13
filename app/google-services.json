@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "364891260070",
+    "firebase_url": "https://moibiznesv04.firebaseio.com",
+    "project_id": "moibiznesv04",
+    "storage_bucket": "moibiznesv04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364891260070:android:9bb0a0dee6b0b7c25a6067",
+        "android_client_info": {
+          "package_name": "com.kyrgyzcoder.moibiznesv04"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364891260070-fpa3s30e9l7egvaui1l8ve9uf6bi9dsl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kyrgyzcoder.moibiznesv04.sign_in",
+            "certificate_hash": "5b4d4d12bd1311721b12df8f74d8a31f379e17d6"
+          }
+        },
+        {
+          "client_id": "364891260070-hggn3jvb71tpchn9d0bev1cm1qhfovr2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_lg6fixaIJlsfre7_EgebsaNDcOfzr_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364891260070-hggn3jvb71tpchn9d0bev1cm1qhfovr2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
