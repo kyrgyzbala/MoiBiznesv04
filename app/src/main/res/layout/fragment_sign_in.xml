@@ -76,12 +76,23 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textViewRegisterHere"
+        android:id="@+id/textViewForgotPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardViewSignIn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/forgot_pwd"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textViewRegisterHere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewForgotPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
         android:text="@string/registerheretext"
         android:textAlignment="center"
         android:textSize="15sp" />
@@ -91,6 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgLogo"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:visibility="gone" />
 

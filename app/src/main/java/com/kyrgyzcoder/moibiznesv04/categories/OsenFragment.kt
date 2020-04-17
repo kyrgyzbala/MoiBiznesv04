@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.kyrgyzcoder.moibiznesv04.*
+import com.kyrgyzcoder.moibiznesv04.R
 import com.kyrgyzcoder.moibiznesv04.adapters.ItemsRecyclerViewAdapter
 import com.kyrgyzcoder.moibiznesv04.allItems.AllItemsViewModel
 import com.kyrgyzcoder.moibiznesv04.editadd.EditAddActivity
@@ -34,7 +34,7 @@ class OsenFragment : Fragment(), ItemsRecyclerViewAdapter.OnItemClickListenerN {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setHasOptionsMenu(false)
+        setHasOptionsMenu(true)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_osen, container, false)
     }
@@ -54,11 +54,34 @@ class OsenFragment : Fragment(), ItemsRecyclerViewAdapter.OnItemClickListenerN {
 
         fabOsen.setOnClickListener {
             val intent = Intent(this.context, EditAddActivity::class.java)
-            startActivityForResult(intent,
+            startActivityForResult(
+                intent,
                 REQUEST_ADD
             )
         }
         onSwipeDelete()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.osen_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return when (item.itemId) {
+            R.id.action_nur -> {
+                Toast.makeText(this.requireContext(), "Action Nur clicked!", Toast.LENGTH_LONG)
+                    .show()
+                true
+            }
+            R.id.action_nur2 -> {
+                Toast.makeText(this.requireContext(), "Action Nur2 clicked!", Toast.LENGTH_LONG)
+                    .show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onItemClick(position: Int) {
@@ -69,7 +92,8 @@ class OsenFragment : Fragment(), ItemsRecyclerViewAdapter.OnItemClickListenerN {
                 putExtra(EXTRA_ITEM, it[position])
             }
         })
-        startActivityForResult(intent,
+        startActivityForResult(
+            intent,
             REQUEST_EDIT
         )
     }

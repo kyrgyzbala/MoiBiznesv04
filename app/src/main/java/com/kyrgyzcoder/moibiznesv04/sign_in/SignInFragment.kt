@@ -16,7 +16,6 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.kyrgyzcoder.moibiznesv04.MainActivity
 import com.kyrgyzcoder.moibiznesv04.R
-import com.kyrgyzcoder.moibiznesv04.utils.EXTRA_USERNAME
 
 /**
  * A simple [Fragment] subclass.
@@ -28,6 +27,7 @@ class SignInFragment : Fragment() {
     private lateinit var loginView: CardView
     private lateinit var registerHereTextView: TextView
     private lateinit var mProgressBar: ProgressBar
+    private lateinit var textViewForgotPwd: TextView
 
     private lateinit var mAuth: FirebaseAuth
 
@@ -42,6 +42,7 @@ class SignInFragment : Fragment() {
         passwordEditText = view.findViewById(R.id.editTextPasswordSignIn)
         loginView = view.findViewById(R.id.cardViewSignIn)
         registerHereTextView = view.findViewById(R.id.textViewRegisterHere)
+        textViewForgotPwd = view.findViewById(R.id.textViewForgotPassword)
         mProgressBar = view.findViewById(R.id.progressBarSignIn)
         mAuth = FirebaseAuth.getInstance()
         return view
@@ -54,7 +55,25 @@ class SignInFragment : Fragment() {
             findNavController().navigate(R.id.action_signInFragment_to_registerFragment)
         }
 
+        textViewForgotPwd.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordFragment)
+        }
         showSignInOptions()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val user = mAuth.currentUser
+        if (user != null) {
+            /* Allow access to the app only if user email has been verified*/
+            if (user.isEmailVerified) {
+                activity!!.finish()
+                val intent = Intent(this.requireContext(), MainActivity::class.java).apply {
+                    addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                }
+                startActivity(intent)
+            }
+        }
     }
 
     private fun showSignInOptions() {
@@ -67,11 +86,22 @@ class SignInFragment : Fragment() {
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                     mProgressBar.visibility = View.GONE
                     if (it.isSuccessful) {
-                        val intent = Intent(this.requireContext(), MainActivity::class.java).apply {
-                            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                            putExtra(EXTRA_USERNAME, email)
+                        val user = mAuth.currentUser
+                        if (user != null && user.isEmailVerified) {
+                            activity!!.finish()
+                            val intent =
+                                Intent(this.requireContext(), MainActivity::class.java).apply {
+                                    addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                                }
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(
+                                this.requireContext(),
+                                "Пожалуйста подтвердите свой email!",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
-                        startActivity(intent)
+
                     } else {
                         Toast.makeText(
                             this.requireContext(),

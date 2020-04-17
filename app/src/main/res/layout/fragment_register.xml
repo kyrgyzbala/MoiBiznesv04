@@ -113,35 +113,30 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#fff" />
 
-    <RelativeLayout
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/signInWithGoogle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/loginWith"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/googlelogo" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button_face"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginWith"
+        android:layout_below="@+id/signInWithGoogle"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/signInWithGoogle"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/googlelogo" />
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/signInWithFacebook"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_toEndOf="@+id/signInWithGoogle"
-            android:src="@drawable/facebooklogo" />
-    </RelativeLayout>
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="30dp" />
 
     <ProgressBar
         android:id="@+id/progressBarRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgLogoRegister"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:visibility="gone" />
 

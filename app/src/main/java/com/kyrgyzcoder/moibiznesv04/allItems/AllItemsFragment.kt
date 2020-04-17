@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.kyrgyzcoder.moibiznesv04.*
+import com.kyrgyzcoder.moibiznesv04.R
 import com.kyrgyzcoder.moibiznesv04.adapters.ItemsRecyclerViewAdapter
 import com.kyrgyzcoder.moibiznesv04.editadd.EditAddActivity
 import com.kyrgyzcoder.moibiznesv04.soldItems.SoldItemsFragment
@@ -59,7 +59,8 @@ class AllItemsFragment : Fragment(), ItemsRecyclerViewAdapter.OnItemClickListene
 
         fabVseTov.setOnClickListener {
             val intent = Intent(this.context, EditAddActivity::class.java)
-            startActivityForResult(intent,
+            startActivityForResult(
+                intent,
                 REQUEST_ADD
             )
         }
@@ -93,7 +94,8 @@ class AllItemsFragment : Fragment(), ItemsRecyclerViewAdapter.OnItemClickListene
                 putExtra(EXTRA_ITEM, it[position])
             }
         })
-        startActivityForResult(intent,
+        startActivityForResult(
+            intent,
             REQUEST_EDIT
         )
     }
@@ -105,12 +107,16 @@ class AllItemsFragment : Fragment(), ItemsRecyclerViewAdapter.OnItemClickListene
                 true
             }
             R.id.action_newontop -> {
+                Toast.makeText(this.requireContext(), "Сортировано! Новые в начале", Toast.LENGTH_LONG)
+                    .show()
                 viewModel.getAllItems().observe(viewLifecycleOwner, Observer {
                     adapter.submitList(it)
                 })
                 true
             }
             R.id.action_oldontop -> {
+                Toast.makeText(this.requireContext(), "Сортировано! Старые в начале", Toast.LENGTH_LONG)
+                    .show()
                 viewModel.getAllSortedAs().observe(viewLifecycleOwner, Observer {
                     adapter.submitList(it)
                 })

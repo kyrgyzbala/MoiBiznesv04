@@ -63,5 +63,10 @@
     <string name="signout">Выйти</string>
     <string name="signout_message">Вы уверены что хотите выйти?</string>
     <string name="signInFail">Неверный Email или пароль!</string>
+    <string name="setprofilemessage">Вы уверены что хотите изменить фото профиля?</string>
+
+    <string name="get_link">Получить ссылку</string>
+    <string name="forgot_pwd">Забыли пароль?</string>
+    <string name="recover_pws">Восстановление пароля</string>
 
 </resources>

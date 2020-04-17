@@ -8,4 +8,6 @@
     <color name="colorBackNav">#1d2733</color>
     <color name="colorBackToolbar">#222e3c</color>
     <color name="backgroundColr">#293951</color>
+
+    <color name="backColorLogin">#BA4AF1</color>
 </resources>

@@ -61,6 +61,12 @@ class SoldItemsFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         return when (item.itemId) {
+            R.id.action_all_sold -> {
+                viewModel.getAllSoldItems().observe(viewLifecycleOwner, Observer {
+                    adapterS.submitList(it)
+                })
+                true
+            }
             R.id.action_vesna -> {
                 viewModel.getVesnaSold().observe(viewLifecycleOwner, Observer {
                     adapterS.submitList(it)

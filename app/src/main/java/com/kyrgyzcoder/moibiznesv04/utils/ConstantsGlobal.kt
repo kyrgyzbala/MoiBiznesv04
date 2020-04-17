@@ -24,4 +24,6 @@ const val CAT_DRUGUIE_TXT = "Другие"
 const val REQUEST_ADD = 101
 const val REQUEST_EDIT = 102
 
+const val GOOGLE_SIGN_IN_REC = 555
+const val CHOOSE_IMAGE_REQUEST = 9900
 const val EXTRA_USERNAME = "EXTRA_USERNAME"
