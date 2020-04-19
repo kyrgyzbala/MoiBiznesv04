@@ -17,7 +17,7 @@
         android:src="@drawable/logo" />
 
     <EditText
-        android:id="@+id/editTextEmailRegister"
+        android:id="@+id/editTextNameRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgLogoRegister"
@@ -26,6 +26,22 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:drawableStart="@drawable/ic_action_user"
+        android:ems="10"
+        android:hint="@string/name_rus"
+        android:inputType="textPersonName"
+        android:textColor="#fff"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/editTextEmailRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNameRegister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_action_email"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
@@ -67,11 +83,11 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewRegister"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@id/editTextPasswordRegisterSecond"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="46dp"
         app:cardBackgroundColor="#BA4AF1"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp">
@@ -81,7 +97,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textViewVoitiSignIn"
+                android:id="@+id/textViewRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -106,9 +122,8 @@
         android:id="@+id/loginWith"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewAlreadyHave"
+        android:layout_above="@+id/signInWithGoogle"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
         android:text="@string/loginwith"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#fff" />
@@ -117,7 +132,7 @@
         android:id="@+id/signInWithGoogle"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_below="@id/loginWith"
+        android:layout_above="@+id/login_button_face"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:src="@drawable/googlelogo" />
@@ -126,10 +141,10 @@
         android:id="@+id/login_button_face"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/signInWithGoogle"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="16dp" />
 
     <ProgressBar
         android:id="@+id/progressBarRegister"

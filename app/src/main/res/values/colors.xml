@@ -9,5 +9,6 @@
     <color name="colorBackToolbar">#222e3c</color>
     <color name="backgroundColr">#293951</color>
 
-    <color name="backColorLogin">#BA4AF1</color>
+    <color name="backColorLoginTool">#46328D</color>
+    <color name="backColorLoginToolM">#35207D</color>
 </resources>

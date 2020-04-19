@@ -42,6 +42,7 @@ class RegisterFragment : Fragment() {
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var passwordTwoEditText: EditText
+    private lateinit var nameEditText: EditText
     private lateinit var registerCardView: CardView
     private lateinit var haveAccountTextView: TextView
     private lateinit var signInWithGoogleImageView: CircleImageView
@@ -63,6 +64,7 @@ class RegisterFragment : Fragment() {
         emailEditText = view.findViewById(R.id.editTextEmailRegister)
         passwordEditText = view.findViewById(R.id.editTextPasswordRegisterFirst)
         passwordTwoEditText = view.findViewById(R.id.editTextPasswordRegisterSecond)
+        nameEditText = view.findViewById(R.id.editTextNameRegister)
         registerCardView = view.findViewById(R.id.cardViewRegister)
         haveAccountTextView = view.findViewById(R.id.textViewAlreadyHave)
         signInWithGoogleImageView = view.findViewById(R.id.signInWithGoogle)
@@ -115,8 +117,6 @@ class RegisterFragment : Fragment() {
         signInWithGoogleImageView.setOnClickListener {
             signInWithGoogle()
         }
-
-
     }
 
     private fun signInWithFacebook() {
@@ -129,6 +129,7 @@ class RegisterFragment : Fragment() {
                     handleFacebookAccessToken(result.accessToken)
                 }
             }
+
             override fun onCancel() {
                 Log.d("NUR", "onCancel")
             }
@@ -210,10 +211,11 @@ class RegisterFragment : Fragment() {
      */
     private fun registerNewUser() {
         passwordTwoEditText.onEditorAction(EditorInfo.IME_ACTION_DONE)
+        val name = nameEditText.text.toString().trim()
         val email = emailEditText.text.toString().trim()
         val pOne = passwordEditText.text.toString().trim()
         val pTwo = passwordTwoEditText.text.toString().trim()
-        if (validateLoginInput(email, pOne, pTwo)) {
+        if (validateLoginInput(email, pOne, pTwo, name)) {
             progressBar.visibility = View.VISIBLE
             firebaseAuth.createUserWithEmailAndPassword(email, pOne).addOnCompleteListener {
                 progressBar.visibility = View.GONE
@@ -223,23 +225,36 @@ class RegisterFragment : Fragment() {
                         "Ваша почта успешно зарегистрирована!",
                         Toast.LENGTH_LONG
                     ).show()
-                    firebaseAuth.currentUser!!.sendEmailVerification()
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                Toast.makeText(
-                                    this.requireContext(),
-                                    "Пожалуйста проверьте свою почту Email и подтвердите свою почту по ссылке!",
-                                    Toast.LENGTH_LONG
-                                ).show()
-                                findNavController().navigate(R.id.action_registerFragment_to_signInFragment)
-                            } else {
-                                Toast.makeText(
-                                    this.requireContext(),
-                                    "Пожалуйста проверьте свою почту Email и нажмите на ссылку там!",
-                                    Toast.LENGTH_LONG
-                                ).show()
+                    val user = firebaseAuth.currentUser
+                    user?.sendEmailVerification()?.addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                this.requireContext(),
+                                "Пожалуйста проверьте свою почту Email и подтвердите свою почту по ссылке!",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            val profile = UserProfileChangeRequest.Builder()
+                                .setDisplayName(name)
+                                .build()
+                            user.updateProfile(profile).addOnCompleteListener {nTask->
+                                if (nTask.isSuccessful) {
+                                    Log.d("NUR", "DisplayName added!")
+                                } else {
+                                    Log.d(
+                                        "NUR",
+                                        "Error! Display adding -> ${nTask.exception!!.message}"
+                                    )
+                                }
                             }
+                            findNavController().navigate(R.id.action_registerFragment_to_signInFragment)
+                        } else {
+                            Toast.makeText(
+                                this.requireContext(),
+                                "Пожалуйста проверьте свою почту Email и нажмите на ссылку там!",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
+                    }
                 } else {
                     Toast.makeText(
                         this.requireContext(),
@@ -262,7 +277,12 @@ class RegisterFragment : Fragment() {
     /**
      * Util functions
      */
-    private fun validateLoginInput(email: String, pOne: String, pTwo: String): Boolean {
+    private fun validateLoginInput(
+        email: String,
+        pOne: String,
+        pTwo: String,
+        name: String
+    ): Boolean {
 
         var ret = true
 
@@ -287,6 +307,11 @@ class RegisterFragment : Fragment() {
 
         if (pOne.length < 6) {
             passwordEditText.error = getString(R.string.passwordLength)
+            ret = false
+        }
+
+        if (name.isEmpty()) {
+            nameEditText.error = "Вводите имя!"
             ret = false
         }
         return ret

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
+            android:name=".settings.SettingsActivity"
+            android:theme="@style/AppTheme.Settings"></activity>
+        <activity
             android:name=".sign_in.SignInActivity"
             android:theme="@style/AppTheme.NoActionBarLogin">
             <intent-filter>
@@ -23,9 +26,7 @@
         <activity
             android:name=".editadd.EditAddActivity"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBarEdit">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBarEdit"></activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

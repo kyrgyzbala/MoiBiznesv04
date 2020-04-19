@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -21,7 +22,6 @@ class ForgotPasswordFragment : Fragment() {
 
     private lateinit var editTextEmailForgotPwd: EditText
     private lateinit var getLinkCardView: CardView
-    private lateinit var toolbar: Toolbar
     private lateinit var mProgressBar: ProgressBar
 
     private lateinit var firebaseAuth: FirebaseAuth
@@ -34,15 +34,17 @@ class ForgotPasswordFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_forgot_password, container, false)
         editTextEmailForgotPwd = view.findViewById(R.id.editTextEmailForgotPwd)
         getLinkCardView = view.findViewById(R.id.cardViewForgetPwd)
-        toolbar = view.findViewById(R.id.toolbarForgetPwd)
         mProgressBar = view.findViewById(R.id.progressBarForgotPwd)
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbar.title = getString(R.string.recover_pws)
 
+        activity!!.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        activity!!.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        activity!!.window.statusBarColor =
+            ContextCompat.getColor(activity!!, R.color.backColorLoginToolM)
         firebaseAuth = FirebaseAuth.getInstance()
 
         getLinkCardView.setOnClickListener {
@@ -60,8 +62,8 @@ class ForgotPasswordFragment : Fragment() {
         if (email.contains("@")) {
             mProgressBar.visibility = View.VISIBLE
             firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
+                mProgressBar.visibility = View.GONE
                 if (task.isSuccessful) {
-                    mProgressBar.visibility = View.GONE
                     Toast.makeText(
                         this.requireContext(),
                         "Ссылка на востановлени пароля отправлено на вашу почту!",
@@ -71,7 +73,7 @@ class ForgotPasswordFragment : Fragment() {
                 } else {
                     Toast.makeText(
                         this.requireContext(),
-                        "Ошибка: ${task.exception!!.message}",
+                        "Ошибка: ${task.exception!!.message} Пожалуйста вводите правильный email",
                         Toast.LENGTH_LONG
                     ).show()
                 }

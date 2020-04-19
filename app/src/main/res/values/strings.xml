@@ -64,9 +64,21 @@
     <string name="signout_message">Вы уверены что хотите выйти?</string>
     <string name="signInFail">Неверный Email или пароль!</string>
     <string name="setprofilemessage">Вы уверены что хотите изменить фото профиля?</string>
+    <string name="changepwdmessage">Вы уверены что хотите сменить пароль?</string>
+    <string name="deleteUserMessage">Вы уверены что хотите удалить аккаунт?</string>
 
     <string name="get_link">Получить ссылку</string>
     <string name="forgot_pwd">Забыли пароль?</string>
     <string name="recover_pws">Восстановление пароля</string>
+
+    <string name="change_pwd">Смненить пароль</string>
+    <string name="change_pwd_toolbar">Смена пароля</string>
+    <string name="delete_account">Удалить аккаунт</string>
+    <string name="name_rus">Имя</string>
+    <string name="prof_settings">Настройка провиля</string>
+    <string name="name_user">Имя пользователя:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

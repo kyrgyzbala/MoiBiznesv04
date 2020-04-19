@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_settings"
+    app:startDestination="@id/settingsFragment">
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.kyrgyzcoder.moibiznesv04.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+
+        <action
+            android:id="@+id/action_settingsFragment_to_reAuthFragment"
+            app:destination="@id/reAuthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.kyrgyzcoder.moibiznesv04.settings.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/reAuthFragment"
+        android:name="com.kyrgyzcoder.moibiznesv04.settings.ReAuthFragment"
+        android:label="fragment_re_auth"
+        tools:layout="@layout/fragment_re_auth" >
+        <action
+            android:id="@+id/action_reAuthFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+</navigation>
